@@ -24,6 +24,9 @@ export default {
 </script>
 
 <template>
+  <div class="bg-primary text-white ps-5 pt-2 pb-4 mb-5">
+    <h1 class="py-5">La tua collezione</h1>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col col-md-6 col-lg-4" v-for="card in projects" :key="card">
@@ -33,4 +36,5 @@ export default {
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+</style>

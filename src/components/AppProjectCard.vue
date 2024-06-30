@@ -8,7 +8,7 @@ export default {
 
 <template>
     <div>
-        <div class="card border-2" style="width: 18rem">
+        <div class="card border-2 h-100" style="width: 18rem">
             <img :src="cardObj.thumb ? `${cardObj.thumb}` : 'https://via.placeholder.com/640x480.png'"
                 class="card-img-top" :alt="`${cardObj.title}`" />
             <div class="card-body">
