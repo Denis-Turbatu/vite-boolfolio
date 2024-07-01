@@ -1,6 +1,20 @@
 <script>
     export default {
-        name: "AppHome"
+        name: "AppHome",
+        data() {
+            return {
+                navLinks: [
+                    {
+                        routeName: "home",
+                        title: 'Home', 
+                    },
+                    {
+                        routeName: "projects",
+                        title: 'Progetti', 
+                    },
+                ],
+            }
+        },
     };
 </script>
 
@@ -16,11 +30,8 @@
                 </button>
                 <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav d-flex gap-3">
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'home' }">Home</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'projects' }">Projects</router-link>
+                        <li class="nav-item" v-for="link in navLinks">
+                            <router-link :to="{ name: link.routeName }" class="text-decoration-none">{{link.title}}</router-link>
                         </li>
                     </ul>
                 </div>
