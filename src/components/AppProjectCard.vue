@@ -2,7 +2,7 @@
 export default {
     props: {
         cardObj: Object,
-    }
+    },
 };
 </script>
 
@@ -15,6 +15,12 @@ export default {
                 <section class="card-text">
                     <section>
                         <h4>{{ cardObj.title }}</h4>
+                        <p>{{ cardObj.type.title }}</p>
+                        <ul>
+                            <li
+                            v-for="curTech in this.cardObj.technologies" :key="curTech"
+                            >{{ curTech.name }}</li>
+                        </ul>
                         <p class="mb-3">{{ cardObj.description }}</p>
                         <p>{{ cardObj.slug }}</p>
                     </section>

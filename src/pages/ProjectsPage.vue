@@ -19,6 +19,7 @@ export default {
   created() {
     axios.get("http://127.0.0.1:8000/api/projects").then((resp) => {
       // console.log(resp.data.result);
+      // console.log(resp.data.result.data[0].technologies);
       // console.log("currentPage", resp.data.result.current_page);
       // console.log("lastPage", resp.data.result.last_page);
       this.projects = resp.data.result.data;
@@ -29,8 +30,8 @@ export default {
   methods: {
     getProjects(pageNumber) {
       axios.get(`http://127.0.0.1:8000/api/projects?page=${pageNumber}`).then((resp) => {
-        console.log(resp.data.result);
-        console.log("currentPage", resp.data.result.current_page);
+        // console.log(resp.data.result);
+        // console.log("currentPage", resp.data.result.current_page);
         this.projects = resp.data.result.data;
       });
     },
@@ -53,11 +54,11 @@ export default {
     </div>
     <nav aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#" @click="getPrevious()">Previous</a></li>
         <li class="page-item" v-for="page in lastPage" :key="page">
           <a class="page-link" href="#" @click="changePage(page)">{{ page }}</a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <li class="page-item"><a class="page-link" href="#" @click="getNext()">Next</a></li>
       </ul>
     </nav>
   </div>
